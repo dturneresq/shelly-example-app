@@ -1,0 +1,20 @@
+h1 Redis test
+
+table.table.table-hover
+  tr
+    th Name
+    th.col-md-2
+  - @tags.each do |tag|
+    tr
+      td = tag
+      td = link_to 'Destroy', tag_path(tag), confirm: 'Are you sure?', method: :delete, class: 'btn btn-default btn-xs'
+
+= simple_form_for "tag" do |f|
+  = f.input :name, label: 'Name'
+  = f.submit 'Add tag', class: 'btn btn-primary'
+
+hr
+
+h2 config/redis.yml
+
+pre = File.read(Rails.root.join("config", "redis.yml")) rescue ""

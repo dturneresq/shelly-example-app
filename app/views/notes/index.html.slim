@@ -1,0 +1,26 @@
+h1 MongoDB test
+
+table.table.table-hover
+  tr
+    th.col-md-2 Title
+    th Body
+    th.col-md-2
+
+  - @notes.each do |note|
+    tr
+      td = note.title
+      td = note.body
+      td
+        .btn-group
+          = link_to 'Edit', edit_note_path(note), class: 'btn btn-default btn-xs'
+          = link_to 'Destroy', note, confirm: 'Are you sure?', method: :delete, class: 'btn btn-default btn-xs'
+
+br
+
+= link_to 'New Note', new_note_path, class: 'btn btn-primary'
+
+hr
+
+h2 Mongoid config
+
+pre = File.read(File.join(Rails.root, 'config', 'mongoid.yml'))

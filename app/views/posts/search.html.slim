@@ -1,0 +1,23 @@
+h1 Elasticsearch test
+
+.alert.alert-info Create some posts before searching.
+
+= form_tag search_posts_path, method: :get, class: 'form-inline' do
+  .form-group
+    = text_field_tag :q, '', placeholder: 'Search...', class: 'form-control'
+  = submit_tag "GO", class: 'btn btn-primary'
+
+hr
+
+table.table.table-hover
+  tr
+    th.col-md-2 Title
+    th Body
+  - @posts.each do |post|
+    tr
+      td = post.title
+      td = post.body
+
+hr
+
+= link_to 'Reindex', reindex_posts_path, class: 'btn btn-default'

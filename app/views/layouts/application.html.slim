@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title Shelly Cloud Example App
+    = stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+body
+  nav.navbar.navbar-default.navbar-static-top
+    .container
+      .navbar-header
+        button.navbar-toggle data-toggle="collapse" data-target=".main-navbar-collapse"
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to "Shelly Cloud Example App", root_path, class: "navbar-brand"
+      .collapse.navbar-collapse.main-navbar-collapse
+        ul.nav.navbar-nav
+          li class=active_for("posts/index", "posts/edit")
+            = link_to "PostgreSQL", posts_path
+          li class=active_for("notes")
+            = link_to "MongoDB", notes_path
+          li class=active_for("tags")
+            = link_to "Redis", tags_path
+          li class=active_for("posts/search")
+            = link_to "Elasticsearch", search_posts_path
+          li class=active_for("events")
+            =link_to "Sidekiq & Clockwork", "/sidekiq"
+
+  .container
+    = yield
