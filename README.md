@@ -23,22 +23,22 @@ This is an example application showcasing the possibilities of the [Shelly Cloud
 5) Add required services to the Cloudfile:
 
     your-code-name:
-    ruby_version: 2.0.0 # 2.0.0, jruby, 1.9.3, 1.9.2 or ree-1.8.7
-    environment: production # RAILS_ENV
-    monitoring_email: you@example.com
-    domains:
-      - shelly-example-app.shellyapp.com
-    servers:
-      app1:
-        size: small
-        puma: 1
-        sidekiq: 1
-        clockwork: on
-        elasticsearch: on
-        databases:
-          - postgresql
-          - mongodb
-          - redis
+      ruby_version: 2.0.0 # 2.0.0, jruby, 1.9.3, 1.9.2 or ree-1.8.7
+      environment: production # RAILS_ENV
+      monitoring_email: you@example.com
+      domains:
+        - shelly-example-app.shellyapp.com
+      servers:
+        app1:
+          size: small
+          puma: 1
+          sidekiq: 1
+          clockwork: on
+          elasticsearch: on
+          databases:
+            - postgresql
+            - mongodb
+            - redis
 
 6) Start your cloud
 
