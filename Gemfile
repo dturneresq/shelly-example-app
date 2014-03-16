@@ -24,3 +24,5 @@ gem 'sinatra', '>= 1.3.0', require: nil
 gem 'clockwork'
 
 gem 'searchkick'
+
+gem 'foreman', group: :development
