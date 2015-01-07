@@ -14,4 +14,8 @@ ExampleApp::Application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   root "home#index"
+
+  get 'test_pg_timeout', to: 'home#test_pg_timeout'
+  get 'test_timeout', to: 'home#test_timeout'
+
 end
