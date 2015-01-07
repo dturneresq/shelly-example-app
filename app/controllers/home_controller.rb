@@ -4,7 +4,9 @@ class HomeController < ApplicationController
 
   def test_pg_timeout
     s = Time.now
-    ActiveRecord::Base.connection.execute("select pg_sleep(20)")
+    ActiveRecord::Base.transaction do
+      ActiveRecord::Base.connection.execute("select pg_sleep(20)")
+    end
     f = Time.now
 
     render text: "OK #{s} - #{f}"
