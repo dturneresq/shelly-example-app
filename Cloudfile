@@ -6,7 +6,7 @@ test-timeout-on-web-apps:
   servers:
     app1:
       size: small
-      puma: 1
+      thin: 1
       # delayed_job: 1
       # sidekiq: 1
       # clockwork: on
