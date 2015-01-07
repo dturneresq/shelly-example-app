@@ -55,7 +55,7 @@ GEM
     daemons (1.1.9)
     dotenv (0.10.0)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.4)
     execjs (2.0.1)
     foreman (0.63.0)
       dotenv (>= 0.7)
